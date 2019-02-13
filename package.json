@@ -1,0 +1,44 @@
+{
+  "name": "api-pen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:onwuvic/api-pen.git",
+  "author": "Onwuzor Victor <victor.onwuzor@andela.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run clean && yarn run build-server",
+    "build-server": "babel ./ --out-dir dist --copy-files --ignore node_modules",
+    "clean": "rm -rf dist && mkdir dist",
+    "db:seed": "node_modules/.bin/sequelize db:seed:all",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:rollback": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:rollmigrate": "yarn db:rollback && yarn db:migrate && yarn db:seed",
+    "lint": "node_modules/.bin/eslint ./src",
+    "lint:fix": "yarn lint --fix",
+    "serve": "node dist/src/index.js",
+    "start": "cross-env NODE_ENV=production yarn run build && yarn run serve",
+    "start:dev": "cross-env NODE_ENV=development  DEBUG=log  nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "debug": "^4.1.1",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
