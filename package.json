@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn run clean && yarn run build-server",
-    "build-server": "babel ./ --out-dir dist --copy-files --ignore node_modules",
+    "build-server": "babel src --config-file ./babel.config.js --out-dir dist/src --copy-files --ignore node_modules",
     "clean": "rm -rf dist && mkdir dist",
     "db:seed": "node_modules/.bin/sequelize db:seed:all",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
@@ -28,6 +28,7 @@
     "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
@@ -40,10 +41,13 @@
     "sequelize": "^4.42.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.3",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
-    "babel-cli": "^6.26.0",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
-    "babel-preset-env": "^1.7.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -59,14 +63,12 @@
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/?(*.)(spec|test)js",
-      "<rootDir>/src/**/?(*.)(spec|test).js",
-      "<rootDir>/integrations/**/?(*.)(spec|test).js"
+      "<rootDir>/src/**/?(*.)(spec|test).js"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/database/migrations",
       "<rootDir>/src/database/seeders",
-      "<rootDir>/src/database/models/index.js",
-      "<rootDir>/src/middlewares/index.js"
+      "<rootDir>/src/database/models/index.js"
     ],
     "testEnvironment": "node"
   }
