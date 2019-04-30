@@ -1,7 +1,8 @@
 {
   "name": "api-pen",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
+  "description": "A PENS (Postgres, Express, Node and Sequelize ORM) API template for building API application",
   "bugs": {
     "url": "https://github.com/onwuvic/api-pen/issues"
   },
