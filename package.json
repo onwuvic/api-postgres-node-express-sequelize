@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run build-server",
-    "build-server": "babel src --config-file ./babel.config.js --out-dir dist/src --copy-files --ignore node_modules",
+    "build-server": "node_modules/.bin/babel src --out-dir dist/src --ignore 'node_modules','src/**/*.spec.js','src/**/*.test.js'",
     "clean": "rm -rf dist && mkdir dist",
     "db:seed": "node_modules/.bin/sequelize db:seed:all",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
@@ -24,7 +24,7 @@
     "lint:fix": "npm run lint --fix",
     "serve": "node dist/src/index.js",
     "start": "cross-env NODE_ENV=production npm run build && npm run serve",
-    "start:dev": "cross-env NODE_ENV=development  DEBUG=log  nodemon --exec babel-node src/index.js",
+    "dev": "cross-env NODE_ENV=development DEBUG=log node_modules/.bin/nodemon --exec babel-node src/index.js",
     "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit"
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "jest": "^24.1.0",
+    "nodemon": "1.18.11",
     "supertest": "^3.4.2"
   },
   "jest": {
