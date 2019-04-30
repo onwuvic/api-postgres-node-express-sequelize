@@ -10,7 +10,7 @@
     "url": "git@github.com:onwuvic/api-pen.git"
   },
   "homepage": "https://github.com/onwuvic/api-pen#readme",
-  "author": "Onwuzor Victor <victor.onwuzor@andela.com>",
+  "author": "Onwuzor Victor <onwuzorvictor@outlook.com>",
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && npm run build-server",
