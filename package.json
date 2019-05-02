@@ -1,16 +1,16 @@
 {
-  "name": "api-pen",
+  "name": "api-postgres-node-express-sequelize",
   "version": "1.0.0",
   "main": "src/index.js",
   "description": "A PENS (Postgres, Express, Node and Sequelize ORM) API template for building API application",
   "bugs": {
-    "url": "https://github.com/onwuvic/api-pen/issues"
+    "url": "https://github.com/onwuvic/api-postgres-node-express-sequelize/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:onwuvic/api-pen.git"
+    "url": "git@github.com:onwuvic/api-postgres-node-express-sequelize.git"
   },
-  "homepage": "https://github.com/onwuvic/api-pen#readme",
+  "homepage": "https://github.com/onwuvic/api-postgres-node-express-sequelize#readme",
   "author": "Onwuzor Victor <onwuzorvictor@outlook.com>",
   "license": "MIT",
   "scripts": {
