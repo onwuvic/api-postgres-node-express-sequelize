@@ -20,7 +20,7 @@ babel, eslint, airbnb javascript style guide, code-climate, circle-ci, sequelize
 - Code of Conduct file for Open Source project
 
 ## Usage
-- clone it `git clone git@github.com:onwuvic/api-pen.git` or use the template generator.
+- clone it `git clone git@github.com:onwuvic/api-postgres-node-express-sequelize.git` or use the template generator.
 - npm install
 - rename .env.sample to .env and populate the required parameters
 
@@ -40,7 +40,8 @@ babel, eslint, airbnb javascript style guide, code-climate, circle-ci, sequelize
 - db:seed : This is used to run sequelize seed operation.
 - db:migrate : This is used to run sequelize migrate operation.
 - db:rollback : This is used to run sequelize rollback operation.
-- db:rollmigrate : This is used to run `db:rollback`, `db:migrate`, and `db:seed` sequentially.
+- db:rollmigrate : This is used to run `db:rollback`, `db:migrate` sequentially.
+- db:rollmigrateseed : This is used to run `db:rollback`, `db:migrate`, and `db:seed` sequentially.
 - clean: This is used to remove and recreate `dist` folder.
 - build-server: This is used transpile your ES6/7/8/9 code to ES5 into the `dist` folder.
 - build: This runs the `clean` and `build-server` scripts.
@@ -53,4 +54,4 @@ if you like to customize the way your database folder (migrations, models and se
 You can configure your eslint in .eslintrc file
 
 ### jest
-By default we make used of `jest` for testing but you are free to make used of any testing suite.
+By default we make used of `jest` for testing but you are free to make used of any testing suite like `mocha` etc.
